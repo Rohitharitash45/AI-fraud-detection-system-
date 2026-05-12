@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Syne:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design Tokens ─────────────────────────────────────── */
+:root {
+  --brand:        #1B5EF7;
+  --brand-hover:  #1449D4;
+  --brand-light:  #EEF3FF;
+  --brand-mid:    #DBEAFE;
+  --success:      #059669;
+  --success-bg:   #ECFDF5;
+  --danger:       #DC2626;
+  --danger-bg:    #FEF2F2;
+  --warn:         #D97706;
+  --warn-bg:      #FFFBEB;
+  --sidebar-w:    220px;
+  --topbar-h:     56px;
+}
+
+/* ── Base ──────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: #F9FAFB;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Syne', sans-serif;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #E5E7EB; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #D1D5DB; }
+
+/* ── Custom Animations ─────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20%     { transform: translateX(-6px); }
+  40%     { transform: translateX(6px); }
+  60%     { transform: translateX(-4px); }
+  80%     { transform: translateX(4px); }
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(27,94,247,.3); }
+  70%  { box-shadow: 0 0 0 8px rgba(27,94,247,0); }
+  100% { box-shadow: 0 0 0 0 rgba(27,94,247,0); }
+}
+@keyframes scan-line {
+  0%   { top: 0; opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.animate-fade-up   { animation: fadeUp .25s ease both; }
+.animate-shake     { animation: shake .4s ease; }
+.animate-pulse-ring{ animation: pulse-ring 1.5s ease infinite; }
+
+/* ── Utility classes ───────────────────────────────────── */
+.font-display { font-family: 'Syne', sans-serif; }
+
+.shadow-card {
+  box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+}
+.shadow-card-hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,.08), 0 1px 3px rgba(0,0,0,.04);
+}
+
+/* Score bar fill animation */
+.score-fill { transition: width .7s cubic-bezier(.4,0,.2,1); }
+
+/* ── Nav active indicator ──────────────────────────────── */
+.nav-active-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--brand);
+  margin-left: auto;
+}
