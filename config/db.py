@@ -14,8 +14,10 @@ except ConnectionFailure as e:
     logger.critical(f"MongoDB connection failed: {e}")
     raise
 
-db = client.get_default_database()
+# Database
+db = client["phishguard"]
 
+# Collections
 scans_collection = db["scans"]
 users_collection = db["users"]
 blacklist_collection = db["blacklist"]
