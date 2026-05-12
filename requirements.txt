@@ -16,3 +16,6 @@ werkzeug>=3.0
 python-dotenv>=1.0
 pytesseract
 Pillow
+pymongo[srv]==4.6.1
+dnspython==2.6.1
+certifi==2024.2.2
