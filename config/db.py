@@ -7,7 +7,7 @@ from pymongo.errors import ConnectionFailure
 logger = logging.getLogger(__name__)
 
 MONGO_URI = os.getenv("MONGO_URI")
-
+print("MONGO_URI:", MONGO_URI)
 try:
     client = MongoClient(
         MONGO_URI,
